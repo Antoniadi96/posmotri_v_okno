@@ -81,13 +81,8 @@ ol {
 
 .content__list {
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   block-size: 298px;
-  scrollbar-width: none;
-}
-
-.content__list::-webkit-scrollbar {
-  display: none;
 }
 
 .content__list-item:not(:last-child) {
@@ -128,12 +123,16 @@ ol {
 
 .content__video-card-title {
   padding: 2px 2px 5px;
+  max-width: 200px;
   color: #FFF;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 1;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  overflow: hidden;
   hyphens: auto;
 }
 
@@ -196,9 +195,9 @@ ol {
   cursor: pointer;
 }
 
-.search-form__label:hover {
+.search-form__label > .search-form__label-text:hover{
   text-decoration: underline 1px #FFF;
-  text-underline-offset: 5px;
+  
 }
 
 .search-form__label:has(:focus-visible) {
@@ -207,6 +206,7 @@ ol {
 }
 
 .search-form__textfield {
+  appearance: none;
   border-top: 1px solid #FFF;
   border-right: none;
   border-bottom: 1px solid #FFF;
@@ -217,7 +217,7 @@ ol {
   font-weight: inherit;
   font-size: inherit;
   background-color: transparent;
-  inline-size: 225px;
+  min-width: 225px;
 }
 
 .search-form__textfield::placeholder {
