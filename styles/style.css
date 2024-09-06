@@ -195,10 +195,6 @@ ol {
   cursor: pointer;
 }
 
-/*.search-form__label > .search-form__label-text:hover{
-  text-decoration: underline 1px #FFF;
-}*/
-
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
